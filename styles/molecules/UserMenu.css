@@ -1,0 +1,54 @@
+.UserMenu {
+  @apply relative;
+  &__wrapper {
+    @apply flex flex-row items-center gap-3;
+  }
+  &__rentButton {
+    @apply hidden
+    laptop:block
+    text-[1.45rem]
+    font-semibold 
+    py-3 
+    px-4 
+    rounded-full 
+    hover:bg-neutral-100 
+    transition 
+    cursor-pointer;
+  }
+
+  &__menuButton {
+    @apply p-4
+    laptop:py-[.25rem]
+    laptop:px-[.5rem]
+    border-[.1rem] 
+    border-neutral-200 
+    flex 
+    flex-row 
+    items-center 
+    gap-3 
+    rounded-full 
+    cursor-pointer 
+    hover:shadow-md 
+    transition;
+  }
+
+  &__avatar {
+    @apply hidden laptop:block;
+  }
+
+  &__menu {
+    @apply absolute 
+    rounded-xl 
+    shadow-md
+    w-[40vw]
+    laptop:w-3/4 
+    bg-white 
+    overflow-hidden 
+    right-0 
+    top-12 
+    text-sm;
+  }
+  &__menuWrapper {
+    @apply flex flex-col cursor-pointer;
+  }
+}

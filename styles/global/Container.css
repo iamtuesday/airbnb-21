@@ -1,0 +1,14 @@
+.Container {
+  @apply max-w-[2520px] mx-auto px-4;
+  @media screen(phonexl) {
+    @apply px-2;
+  }
+
+  @media screen(tablet) {
+    @apply px-10;
+  }
+
+  @media screen(laptop) {
+    padding: 0 calc(5rem * var(--scale));
+  }
+}
