@@ -38,15 +38,17 @@
 
   &__menu {
     @apply absolute 
-    rounded-xl 
+    rounded-[1rem]
     shadow-md
     w-[40vw]
-    laptop:w-3/4 
     bg-white 
     overflow-hidden 
     right-0 
-    top-12 
-    text-sm;
+    top-[4rem] 
+    text-[1.45rem];
+    @media screen(laptop) {
+      width: calc(24rem * var(--scale));
+    }
   }
   &__menuWrapper {
     @apply flex flex-col cursor-pointer;
