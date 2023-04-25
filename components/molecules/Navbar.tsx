@@ -9,10 +9,24 @@ import { UserMenu } from "./UserMenu";
 
 export const Navbar = () => {
   return (
-    <div className="Navbar">
-      <div className="Navbar__wrapper">
+    <div className="fixed w-full bg-white z-10 shadow-sm">
+      <div
+        className="
+          py-4 
+          border-b-[1px]
+        "
+      >
         <Container>
-          <div className="Navbar__inner">
+          <div
+            className="
+            flex 
+            flex-row 
+            items-center 
+            justify-between
+            gap-3
+            md:gap-0
+          "
+          >
             <Logo />
             <Search />
             <UserMenu />

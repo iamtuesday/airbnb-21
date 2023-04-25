@@ -40,26 +40,67 @@ export const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   }, [loginModal, rentModal, currentUser]);
 
   return (
-    <div className="UserMenu">
-      <div className="UserMenu__wrapper">
+    <div className="relative">
+      <div className="flex flex-row items-center gap-3">
         <div
           onClick={onRent}
-          className="UserMenu__rentButton"
+          className="
+          hidden
+            md:block
+            text-sm 
+            font-semibold 
+            py-3 
+            px-4 
+            rounded-full 
+            hover:bg-neutral-100 
+            transition 
+            cursor-pointer
+          "
         >
           Airbnb your home
         </div>
-        <div onClick={toggleOpen} className="UserMenu__menuButton">
+        <div
+          onClick={toggleOpen}
+          className="
+             p-4
+             md:py-1
+             md:px-2
+             border-[1px] 
+             border-neutral-200 
+             flex 
+             flex-row 
+             items-center 
+             gap-3 
+             rounded-full 
+             cursor-pointer 
+             hover:shadow-md 
+             transition
+        "
+        >
           <AiOutlineMenu />
-          <div className="UserMenu__avatar">
+          <div className="hidden md:block">
             {/* <Avatar src={currentUser?.image} /> */}
             <Avatar />
           </div>
         </div>
       </div>
       {isOpen && (
-        <div className="UserMenu__menu">
-          <div className="UserMenu__menuWrapper">
-            {true ? (
+        <div
+          className="
+        absolute 
+            rounded-xl 
+            shadow-md
+            w-[40vw]
+            md:w-3/4 
+            bg-white 
+            overflow-hidden 
+            right-0 
+            top-12 
+            text-sm
+            "
+        >
+          <div className="flex flex-col cursor-pointer">
+            {false ? (
               <>
                 <MenuItem
                   label="My trips"
@@ -77,23 +118,14 @@ export const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                   label="My properties"
                   onClick={() => router.push("/properties")}
                 />
-                <MenuItem 
-                  label="Airbnb your home" 
-                  onClick={rentModal.onOpen}
-                />
+                <MenuItem label="Airbnb your home" onClick={rentModal.onOpen} />
                 <hr />
                 <MenuItem label="Logout" onClick={() => signOut()} />
               </>
             ) : (
               <>
-                <MenuItem
-                  label="Login" 
-                  onClick={loginModal.onOpen}
-                />
-                <MenuItem 
-                  label="Sign up" 
-                  onClick={registerModal.onOpen}
-                />
+                <MenuItem label="Login" onClick={loginModal.onOpen} />
+                <MenuItem label="Sign up" onClick={registerModal.onOpen} />
               </>
             )}
           </div>
